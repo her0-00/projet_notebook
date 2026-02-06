@@ -17,9 +17,13 @@ import streamlit as st
 import plotly.express as px
 
 # Chargement des données
-path = r"h:/Mes documents/Téléchargements/Projet-20260204/projet_notebook/input/ds_salaries.csv" #chemin d'acces du fichier
-df = pd.read_csv(path) 
+import kagglehub
 
+# Télécharger le dataset
+path = kagglehub.dataset_download("arnabchaki/data-science-salaries-2023")
+
+# Charger le fichier CSV
+df = pd.read_csv(os.path.join(path, "ds_salaries.csv"))
 
 
 
